@@ -15,11 +15,11 @@ export default Ember.Component.extend({
       filterAction(filterInputValue).then((filterResults) => this.set('results', filterResults))
     },
     FilterEntryClick() {
-      let filterInputValue = this.get('value');
-      let filterAction = this.get('filter');
-      filterAction(filterInputValue).then((filterResults) => console.log(filterResults))
-      this.sendAction("filterResults2",filterInputValue);
-      console.log(filterInputValue);
+      // let filterInputValue = this.get('value');
+      // let filterAction = this.get('filter');
+      // filterAction(filterInputValue).then((filterResults) => console.log(filterResults))
+      console.log("filterEntryClick function",this.get('value'));
+      this.sendAction("filterResults2",this.get('value'));
     }
   }
 });

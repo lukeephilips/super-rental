@@ -6,11 +6,6 @@ export default Ember.Component.extend({
   actions: {
     toggleImage: function() {
       this.toggleProperty('isImageShowing')
-    },
-    delete(rental){
-      if (confirm('Are you sure you want to delete this rental?')){
-        this.sendAction('destroyRental', rental);
-      }
     }
   }
 });

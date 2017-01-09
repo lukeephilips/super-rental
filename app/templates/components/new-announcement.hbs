@@ -1,0 +1,19 @@
+{{#if addNewAnnouncement}}
+  <form>
+
+    <select onchange={{action "selectType" value="target.value"}}>
+      {{#each types as |typeChoice|}}
+        <option value={{typeChoice}} selected={{eq type typeChoice}}>{{typeChoice}}</option>
+      {{/each}}
+    </select>
+
+    <label for="title">Title: </label>
+    {{input value=title id='title' class="form-control"}}
+    <label for="text">Text: </label>
+    {{input value=text id='text' class="form-control"}}
+    <button {{action 'saveAnnouncement'}} class="btn btn">Submit</button>
+  </form>
+{{else}}
+
+  <button {{action 'announcementFormShow'}} class="btn">Create new announcment</button>
+{{/if}}

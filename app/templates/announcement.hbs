@@ -1,0 +1,14 @@
+{{outlet}}
+Here are the announcements:
+{{#each model as |announcement|}}
+  <div class="alert row alert-success">
+    <div class="col-sm-6">
+      {{announcement.title}} <br>
+      {{announcement.text}}.
+    </div>
+    <div class="col-sm-4">
+      <button {{action 'delete' announcement}} class="btn btn-xs btn-danger">Delete</button>
+    </div>
+  </div>
+{{/each}}
+{{new-announcement saveAnnouncement='saveAnnouncement'}}

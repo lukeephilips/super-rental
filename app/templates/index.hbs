@@ -1,13 +1,15 @@
-  <h1> Welcome to Super Rentals </h1>
+<h1> Welcome to Super Rentals </h1>
 
-  We hope you find exactly what you're looking for in a place to stay.
+We hope you find exactly what you're looking for in a place to stay.
 
-{{#list-filter filter=(action 'filterByCity') as |rentals|}}
-  <ul>
-    {{#each rentals as |rental|}}
-    
-       {{rental-tile rental=rental destroyRental="destroyRental"}}
-    {{/each}}
-  </ul>
-{{/list-filter}}
-  {{new-rental saveRental="saveRental"}}
+<ul>
+  {{#each model as |rental|}}
+     {{rental-tile rental=rental}}
+  {{/each}}
+</ul>
+
+{{new-rental saveRental="saveRental"}}
+
+{{#link-to 'about'}}About{{/link-to}}
+{{#link-to 'announcement'}}Announcements{{/link-to}}
+{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
