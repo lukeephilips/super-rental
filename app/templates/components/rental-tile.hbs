@@ -1,0 +1,12 @@
+<li>
+  {{rental.owner}} - {{rental-property-type rental.type}} - {{rental-property-type-uppercase rental.type}}
+  <ul>
+    <li>{{rental.city}}</li>
+  </ul>
+  {{#if isImageShowing }}
+    <img src={{rental.image}} alt={{rental.type}} {{action 'toggleImage'}}/>
+  {{else}}
+    <button {{action 'toggleImage'}}>Show</button>
+  {{/if}}
+  <button {{action 'delete' rental}}>Delete Rental</button>
+</li>
